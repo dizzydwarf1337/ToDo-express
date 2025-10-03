@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: db
+      DB_NAME: TaskDB
+      POSTGRES_CS: postgres://user:userPassword@db:5432/TaskDB
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: userPassword
+      POSTGRES_DB: TaskDB
+    ports:
+      - "5432:5432"
