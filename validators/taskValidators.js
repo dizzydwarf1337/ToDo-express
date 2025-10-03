@@ -1,4 +1,4 @@
-import { body, param, validationResult } from "express-validator";
+import { body, validationResult } from "express-validator";
 import { IdValidator } from "./common/idValidator.js";
 import ApiResponse from "../utils/apiResponse.js";
 
